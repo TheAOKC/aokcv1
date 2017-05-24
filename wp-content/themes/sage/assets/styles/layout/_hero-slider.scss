@@ -3,7 +3,7 @@
 --------------------------------------------------------------*/
 .hero {
 	position: relative;
-	height: 50vh;
+	height: 75vh;
 
 	@include media-query(991px) {
 		min-height: 500px;
@@ -14,7 +14,7 @@
 	}
 
 	.slide {
-		height: 50vh;
+		height: 75vh;
 		margin: 0;
 
 		@include media-query(991px) {

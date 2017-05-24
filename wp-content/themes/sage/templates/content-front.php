@@ -1,5 +1,5 @@
 <!-- start of hero -->
-<section class="hero hero-slider-wrapper hero-slider-s3">
+<section class="hero hero-slider-wrapper hero-slider-s1">
     <div class="hero-slider">
         <div class="slide row">
             <img src="http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_lossy,h_1500,w_2000,f_auto,q_auto/v1/792431/IMG_0551_copy_2_wgzye1.jpg" alt class="slider-bg">
@@ -86,6 +86,39 @@
     </div> <!-- end container -->
 </section>
 <!-- end charity-categories-section -->
+
+
+
+<div class="to-change-section">
+    <div class="section-title">
+        <h2>What we want to change</h2>
+    </div>
+
+    <div class="to-change-holder clearfix">
+        <ul>
+            <li>
+                <a href="#">
+                    <h3>Disaster Relief</h3>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <h3>Medical</h3>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <h3>Education</h3>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <h3>Child Trafficking</h3>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
 
 <!-- start causes-s3 -->
 <section class="causes-s3 section-padding">

@@ -9,3 +9,44 @@
 		}
 	}
 }
+
+
+.partner-item {
+
+	border: 1px solid #eee;
+
+	.img-goal-raised{
+		height: 180px;
+		background: #fff;
+		text-align: center;
+		position: relative;
+
+		.img-holder img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			margin: auto;
+			min-width: auto;
+			max-width: 65%;
+			max-height: 65%;
+			width: auto;
+			height: auto;
+		}
+
+	}
+
+	.causes-info {
+		box-shadow: none!important;
+		padding: 7px 14px;
+		border-top: 1px solid #eee;
+		min-height: 62px;
+
+		h3 {
+			font-size: 19px;
+			text-align: center;
+		}
+
+	}
+}

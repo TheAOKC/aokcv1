@@ -570,3 +570,55 @@
 
 
 
+
+/*--------------------------------------------------------------
+# We want to change
+--------------------------------------------------------------*/
+.to-change-section {
+	padding: 64px 0 0;
+}
+
+.to-change-holder {
+
+	ul {
+		@extend .clearfix;
+
+		> li {
+			padding: 0 10px;
+			margin-bottom: 20px;
+			float: left;
+			width: 25%;
+
+
+
+
+			> a {
+				text-align: center;
+				height: 600px;
+				background: #eee;
+				display: block;
+				width: 100%;
+
+				display: -webkit-box;
+				display: -webkit-flex;
+				display: -ms-flexbox;
+				display: flex;
+				-webkit-box-align: center;
+				-webkit-align-items: center;
+				-ms-flex-align: center;
+				align-items: center;
+
+				h3 {
+					width: 100%;
+
+					text-transform: uppercase;
+					font-size: 50px;
+				}
+			}
+		}
+	}
+
+
+}
+
+

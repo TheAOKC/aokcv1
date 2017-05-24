@@ -24,39 +24,20 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-2.png" alt></a>
+                    <a class="navbar-brand" href="<?= esc_url(home_url('/')); ?>" title="<?php bloginfo('name'); ?>">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-2.png" alt>
+                    </a>
                 </div>
 
                 <div id="navbar" class="navbar-collapse collapse navigation-menu-holder navbar-right">
                     <button class="close-navbar"><i class="fa fa-close"></i></button>
-                    <ul class="nav navbar-nav">
-                        <li class="sub-menu">
-                            <a href="#">Impact</a>
-                            <ul>
-                                <li><a href="causes.html">Causes style 1</a></li>
-                            </ul>
-                        </li>
-                        <li class="sub-menu">
-                            <a href="#">Actions</a>
-                            <ul>
-                                <li><a href="causes.html">Causes style 1</a></li>
-                            </ul>
-                        </li>
-                        <li class="sub-menu">
-                            <a href="#">Learn</a>
-                            <ul>
-                                <li><a href="causes.html">Causes style 1</a></li>
-                            </ul>
-                        </li>
-                        <li class="sub-menu">
-                            <a href="#">About</a>
-                            <ul>
-                                <li><a href="causes.html">Causes style 1</a></li>
-                            </ul>
-                        </li>
 
-                        <li><a href="contact.html">Donate</a></li>
-                    </ul>
+
+                        <?php
+                        if (has_nav_menu('primary_navigation')) :
+                            wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav navbar-nav', 'container' => false]);
+                        endif;
+                        ?>
                 </div><!-- end of nav-collapse -->
 
             </div><!-- end of container -->
