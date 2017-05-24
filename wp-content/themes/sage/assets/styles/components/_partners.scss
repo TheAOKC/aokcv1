@@ -43,9 +43,20 @@
 		border-top: 1px solid #eee;
 		min-height: 62px;
 
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: 50%;
+
 		h3 {
-			font-size: 19px;
+			font-size: 18px;
 			text-align: center;
+			width: 100%;
 		}
 
 	}

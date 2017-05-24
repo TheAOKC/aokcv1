@@ -24,14 +24,19 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
+
                     <a class="navbar-brand" href="<?= esc_url(home_url('/')); ?>" title="<?php bloginfo('name'); ?>">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-2.png" alt>
+                        <?php if( get_field('branding', 'option') ) : ?>
+                            <img src="<?php the_field('branding', 'option') ?>">
+                        <?php else: ?>
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-2.png" alt="<?php bloginfo('name'); ?>">
+                        <?php endif; ?>
                     </a>
+
                 </div>
 
                 <div id="navbar" class="navbar-collapse collapse navigation-menu-holder navbar-right">
                     <button class="close-navbar"><i class="fa fa-close"></i></button>
-
 
                         <?php
                         if (has_nav_menu('primary_navigation')) :

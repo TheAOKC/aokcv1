@@ -9,8 +9,8 @@ function acf_option_page_function() {
     if( function_exists('acf_add_options_page') ) {
 
         acf_add_options_page(array(
-            'page_title' 	=> 'CWM Options',
-            'menu_title'	=> 'CWM Options',
+            'page_title' 	=> 'Options',
+            'menu_title'	=> 'Options',
             'menu_slug' 	=> 'cwm-options',
             'capability'	=> 'edit_posts',
             'redirect'	=> false
@@ -52,7 +52,7 @@ function my_acf_settings_dir( $dir ) {
 }
 
 ///Hide ACF field group menu item
-add_filter('acf/settings/show_admin', '__return_false');
+//add_filter('acf/settings/show_admin', '__return_false');
 
 include_once( get_stylesheet_directory() . '/acf/acf.php' );
 include_once( get_stylesheet_directory() . '/acf/fields-options.php' );
@@ -86,6 +86,8 @@ include_once acf_inc_path.'fields-options.php';
 
 add_image_size( 'post-thumb', 370, 225, true );
 add_image_size( 'avatar-thumb', 140, 148, true );
+add_image_size( 'project-thumb', 570, 460, array( 'center', 'top' ) );
+add_image_size( 'fundraise-thumb', 600, 300, true );
 
 
 /**
@@ -168,6 +170,106 @@ function custom_post_type() {
 
     // Set UI labels for Team Post Type
     $labels = array(
+        'name'                => _x( 'Project', 'Post Type General Name', 'twentythirteen' ),
+        'singular_name'       => _x( 'Project', 'Post Type Singular Name', 'twentythirteen' ),
+        'menu_name'           => __( 'Project', 'twentythirteen' ),
+        'parent_item_colon'   => __( 'Parent Project', 'twentythirteen' ),
+        'all_items'           => __( 'All Project', 'twentythirteen' ),
+        'view_item'           => __( 'View Project', 'twentythirteen' ),
+        'add_new_item'        => __( 'Add New Project', 'twentythirteen' ),
+        'add_new'             => __( 'Add New', 'twentythirteen' ),
+        'edit_item'           => __( 'Edit Project', 'twentythirteen' ),
+        'update_item'         => __( 'Update Project', 'twentythirteen' ),
+        'search_items'        => __( 'Search Project', 'twentythirteen' ),
+        'not_found'           => __( 'Not Found', 'twentythirteen' ),
+        'not_found_in_trash'  => __( 'Not found in Trash', 'twentythirteen' ),
+    );
+
+    // Set other options for Project Post Type
+
+    $args = array(
+        'label'               => __( 'project', 'twentythirteen' ),
+        'description'         => __( 'Project', 'twentythirteen' ),
+        'labels'              => $labels,
+        // Features this CPT supports in Post Editor
+        'supports'            => array( 'title', 'editor', 'thumbnail' ),
+        // You can associate this CPT with a taxonomy or custom taxonomy.
+        //'taxonomies'          => array( 'genres' ),
+        /* A hierarchical CPT is like Pages and can have
+        * Parent and child items. A non-hierarchical CPT
+        * is like Posts.
+        */
+        'hierarchical'        => false,
+        'public'              => true,
+        'show_ui'             => true,
+        'show_in_menu'        => true,
+        'show_in_nav_menus'   => true,
+        'show_in_admin_bar'   => true,
+        'menu_position'       => 20,
+        'can_export'          => true,
+        'has_archive'         => true,
+        'exclude_from_search' => false,
+        'publicly_queryable'  => true,
+        'capability_type'     => 'page',
+    );
+
+    // Registering your Project Post Type
+    register_post_type( 'project', $args );
+
+    ////////
+
+    // Set UI labels for Fundraise Post Type
+    $labels = array(
+        'name'                => _x( 'Fundraise', 'Post Type General Name', 'twentythirteen' ),
+        'singular_name'       => _x( 'Fundraise', 'Post Type Singular Name', 'twentythirteen' ),
+        'menu_name'           => __( 'Fundraise', 'twentythirteen' ),
+        'parent_item_colon'   => __( 'Parent Fundraise', 'twentythirteen' ),
+        'all_items'           => __( 'All Fundraise', 'twentythirteen' ),
+        'view_item'           => __( 'View Fundraise', 'twentythirteen' ),
+        'add_new_item'        => __( 'Add New Fundraise', 'twentythirteen' ),
+        'add_new'             => __( 'Add New', 'twentythirteen' ),
+        'edit_item'           => __( 'Edit Fundraise', 'twentythirteen' ),
+        'update_item'         => __( 'Update Fundraise', 'twentythirteen' ),
+        'search_items'        => __( 'Search Fundraise', 'twentythirteen' ),
+        'not_found'           => __( 'Not Found', 'twentythirteen' ),
+        'not_found_in_trash'  => __( 'Not found in Trash', 'twentythirteen' ),
+    );
+
+    // Set other options for Fundraise Post Type
+
+    $args = array(
+        'label'               => __( 'fundraise_type', 'twentythirteen' ),
+        'description'         => __( 'Fundraise', 'twentythirteen' ),
+        'labels'              => $labels,
+        // Features this CPT supports in Post Editor
+        'supports'            => array( 'title', 'editor', 'thumbnail' ),
+        // You can associate this CPT with a taxonomy or custom taxonomy.
+        //'taxonomies'          => array( 'genres' ),
+        /* A hierarchical CPT is like Pages and can have
+        * Parent and child items. A non-hierarchical CPT
+        * is like Posts.
+        */
+        'hierarchical'        => false,
+        'public'              => true,
+        'show_ui'             => true,
+        'show_in_menu'        => true,
+        'show_in_nav_menus'   => true,
+        'show_in_admin_bar'   => true,
+        'menu_position'       => 20,
+        'can_export'          => true,
+        'has_archive'         => true,
+        'exclude_from_search' => false,
+        'publicly_queryable'  => true,
+        'capability_type'     => 'page',
+    );
+
+    // Registering your Fundraise Post Type
+    register_post_type( 'fundraise_type', $args );
+
+    ////////
+
+    // Set UI labels for Team Post Type
+    $labels = array(
         'name'                => _x( 'Team', 'Post Type General Name', 'twentythirteen' ),
         'singular_name'       => _x( 'Team', 'Post Type Singular Name', 'twentythirteen' ),
         'menu_name'           => __( 'Team', 'twentythirteen' ),
@@ -186,7 +288,7 @@ function custom_post_type() {
     // Set other options for Team Post Type
 
     $args = array(
-        'label'               => __( 'team', 'twentythirteen' ),
+        'label'               => __( 'team_type', 'twentythirteen' ),
         'description'         => __( 'Team', 'twentythirteen' ),
         'labels'              => $labels,
         // Features this CPT supports in Post Editor
@@ -212,57 +314,7 @@ function custom_post_type() {
     );
 
     // Registering your Team Post Type
-    register_post_type( 'team', $args );
-
-    ////////
-
-    // Set UI labels for Services Post Type
-    $labels = array(
-        'name'                => _x( 'Services', 'Post Type General Name', 'twentythirteen' ),
-        'singular_name'       => _x( 'Services', 'Post Type Singular Name', 'twentythirteen' ),
-        'menu_name'           => __( 'Services', 'twentythirteen' ),
-        'parent_item_colon'   => __( 'Parent Services', 'twentythirteen' ),
-        'all_items'           => __( 'All Services', 'twentythirteen' ),
-        'view_item'           => __( 'View Services', 'twentythirteen' ),
-        'add_new_item'        => __( 'Add New Services', 'twentythirteen' ),
-        'add_new'             => __( 'Add New', 'twentythirteen' ),
-        'edit_item'           => __( 'Edit Services', 'twentythirteen' ),
-        'update_item'         => __( 'Update Services', 'twentythirteen' ),
-        'search_items'        => __( 'Search Services', 'twentythirteen' ),
-        'not_found'           => __( 'Not Found', 'twentythirteen' ),
-        'not_found_in_trash'  => __( 'Not found in Trash', 'twentythirteen' ),
-    );
-
-    // Set other options for Services Post Type
-
-    $args = array(
-        'label'               => __( 'service', 'twentythirteen' ),
-        'description'         => __( 'Services', 'twentythirteen' ),
-        'labels'              => $labels,
-        // Features this CPT supports in Post Editor
-        'supports'            => array( 'title', 'editor', 'thumbnail' ),
-        // You can associate this CPT with a taxonomy or custom taxonomy.
-        //'taxonomies'          => array( 'genres' ),
-        /* A hierarchical CPT is like Pages and can have
-        * Parent and child items. A non-hierarchical CPT
-        * is like Posts.
-        */
-        'hierarchical'        => false,
-        'public'              => true,
-        'show_ui'             => true,
-        'show_in_menu'        => true,
-        'show_in_nav_menus'   => true,
-        'show_in_admin_bar'   => true,
-        'menu_position'       => 20,
-        'can_export'          => true,
-        'has_archive'         => true,
-        'exclude_from_search' => false,
-        'publicly_queryable'  => true,
-        'capability_type'     => 'page',
-    );
-
-    // Registering your Services Post Type
-    register_post_type( 'service', $args );
+    register_post_type( 'team_type', $args );
 
 }
 

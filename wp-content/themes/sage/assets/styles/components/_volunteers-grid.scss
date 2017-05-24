@@ -11,6 +11,7 @@
 		height: 120px;
 		margin: 0 auto;
 		@include rounded-border();
+		overflow: hidden;
 		position: relative;
 
 		@include media-query(991px) {
@@ -32,13 +33,13 @@
 		}
 
 		img {
-			@include rounded-border();
+			//@include rounded-border();
 		}
 	}
 
 	.volunteers-details h4 {
-		font-size: 30px;
-		font-size: calc-rem-value(30);
+		font-size: 22px;
+		font-size: calc-rem-value(22);
 		margin: 0.5em 0 0;
 		text-transform: capitalize;
 
@@ -80,45 +81,7 @@
 		}
 	}
 
-	.social-links {
-		display: inline-block;
 
-		li {
-			margin-right: 15px;
-
-			@include media-query(1199px) {
-				margin-right: 10px;
-			}
-
-			@include media-query(767px) {
-				margin-right: 7px;
-			}
-		}
-
-		li:last-child {
-			margin-right: 0;
-		}
-
-		li a {
-			font-size: 22px;
-			font-size: calc-rem-value(22);
-			color: #53636c;
-
-			@include media-query(1199px) {
-				font-size: 18px;
-				font-size: calc-rem-value(18);
-			}
-
-			@include media-query(767px) {
-				font-size: 16px;
-				font-size: calc-rem-value(16);
-			}
-		}
-
-		li a:hover {
-			color: $theme-primary-color;
-		}
-	}
 
 
 }

@@ -164,6 +164,11 @@
                 </div>
             </div> <!-- end row -->
 
+            <div class="row">
+                <div class="all-volunteers">
+                    <a href="#" class="btn theme-btn">All Volunteers</a>
+                </div>
+            </div>
         </div> <!-- end container -->
     </section>
     <!-- end volunteers-->
