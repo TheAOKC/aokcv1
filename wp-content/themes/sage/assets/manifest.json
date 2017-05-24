@@ -1,0 +1,32 @@
+{
+  "dependencies": {
+    "jquery-plugin-collection.js": {
+      "files": [
+        "scripts/jquery-plugin-collection.js"
+      ]
+    },
+    "main.js": {
+      "files": [
+        "scripts/main.js"
+      ],
+      "main": true
+    },
+    "main.css": {
+      "files": [
+        "styles/main.scss"
+      ],
+      "main": true
+    },
+    "customizer.js": {
+      "files": [
+        "scripts/customizer.js"
+      ]
+    },
+    "jquery.js": {
+      "bower": ["jquery"]
+    }
+  },
+  "config": {
+    "devUrl": "http://aokcv1.local"
+  }
+}

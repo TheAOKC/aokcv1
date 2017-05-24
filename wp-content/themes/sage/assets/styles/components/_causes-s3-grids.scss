@@ -1,0 +1,216 @@
+/**** cuases-s3-grids ****/
+.causes-s3 {
+	background: url(http://themexriver.com/charity-world/multi-page/charityworld/images/slider/slide-2.jpg) no-repeat center;
+	background-size: cover;
+	padding-top: 70px;
+
+	.section-title h2 {
+		color: #fff;
+	}
+}
+
+.causes-s3-grids {
+
+	.grid .details {
+		padding: 30px;
+		background-color: #fff;
+		text-align: center;
+		margin-bottom: 10px;
+
+		@include media-query(991px) {
+			padding: 20px 15px;
+		}
+	}
+
+	.grid:hover .img-holder:before,
+	.grid:hover .img-holder a {
+		opacity: 1;
+	}
+
+	.grid:hover .img-holder img {
+		-webkit-transform: scale(1.2,1.2);
+		-moz-transform: scale(1.2,1.2);
+		-o-transform: scale(1.2,1.2);
+		-ms-transform: scale(1.2,1.2);
+		transform: scale(1.2,1.2);
+	}
+
+	.grid .img-holder {
+		position: relative;
+		overflow: hidden;
+
+		&:before {
+			content: "";
+			@include overlay(transparentize($theme-primary-color, 0.1));
+			z-index: 10;
+			opacity: 0;
+			@include transition-time(0.5s);
+		}
+
+		a {
+			font-size: 30px;
+			font-size: calc-rem-value(30);
+			color: $white;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			@include center-by-translating();
+			z-index: 10;
+			opacity: 0;
+			@include transition-time(0.5s);
+		}
+
+		img {
+			@include transition-time(0.5s);
+		}
+	}
+
+	.grid .details h3 {
+		font-size: 26px;
+		font-size: calc-rem-value(26);
+		font-weight: 500;
+		margin: 0 0 0.38em;
+
+		@include media-query(991px) {
+			font-size: 22px;
+			font-size: calc-rem-value(22);
+		}
+
+		@include media-query(767px) {
+			font-size: 20px;
+			font-size: calc-rem-value(20);
+		}
+
+		a {
+			color: $heading-color;
+		}
+
+		a:hover {
+			color: $theme-primary-color;
+		}
+
+	}
+
+	.remaining-days {
+		font-size: 20px;
+		font-size: calc-rem-value(20);
+		color: $causes-remaining-deays-color;
+
+		@include media-query(1199px) {
+			font-size: 16px;
+			font-size: calc-rem-value(16);
+		}
+
+		@include media-query(767px) {
+			font-size: 15px;
+			font-size: calc-rem-value(15);
+		}
+
+		.fi:before {
+			font-size: 18px;
+			font-size: calc-rem-value(18);
+		}
+	}
+
+	p {
+		margin-bottom: 26px;
+		line-height: 1.5;
+	}
+
+
+	.meter-3 {
+		text-align: center;
+		position: relative;
+		margin-top: -62px;
+		z-index: 10;
+		margin-bottom: 10px;
+
+		span {
+			font-family: $heading-font;
+			font-size: 18px;
+			font-size: calc-rem-value(18);
+			font-weight: 600;
+			color: $heading-color;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			@include center-by-translating();
+
+			@include media-query(991px) {
+				font-size: 22px;
+				font-size: calc-rem-value(22);
+			}
+		}
+
+
+
+		canvas {
+			width: 62px;
+			font-size: 10px;
+			background: #fff;
+			border-radius: 100%;
+		}
+
+	}
+
+	.goal-raised {
+		overflow: hidden;
+
+		> div {
+			width: 50%;
+			float: left;
+		}
+
+		+ .btn {
+			margin-top: 20px;
+		}
+	}
+
+	.goal-raised h4 {
+		font-size: 18px;
+		font-size: calc-rem-value(18);
+		color: $theme-primary-color;
+		text-transform: uppercase;
+		margin: 0;
+
+		@include media-query(1199px) {
+			font-size: 17px;
+			font-size: calc-rem-value(17);
+		}
+
+		@include media-query(767px) {
+			font-size: 15px;
+			font-size: calc-rem-value(15);
+		}
+	}
+
+	.goal-raised span {
+		font-family: $heading-font;
+		font-size: 28px;
+		font-size: calc-rem-value(28);
+		font-weight: 600;
+		color: $heading-color;
+
+		@include media-query(1199px) {
+			font-size: 25px;
+			font-size: calc-rem-value(25);
+		}
+
+		@include media-query(991px) {
+			font-size: 20px;
+			font-size: calc-rem-value(20);
+		}
+
+		@include media-query(767px) {
+			font-size: 18px;
+			font-size: calc-rem-value(18);
+		}
+	}
+
+
+
+
+
+
+
+}
