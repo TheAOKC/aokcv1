@@ -26,13 +26,13 @@ define('DB_NAME', 'theaokc');
 define('DB_USER', 'root');
 
 /** MySQL database password */
-define('DB_PASSWORD', '');
+define('DB_PASSWORD', 'root');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
 
 /** Database Charset to use in creating database tables. */
-define('DB_CHARSET', 'utf8');
+define('DB_CHARSET', 'utf8mb4');
 
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
@@ -46,14 +46,14 @@ define('DB_COLLATE', '');
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         'put your unique phrase here');
-define('SECURE_AUTH_KEY',  'put your unique phrase here');
-define('LOGGED_IN_KEY',    'put your unique phrase here');
-define('NONCE_KEY',        'put your unique phrase here');
-define('AUTH_SALT',        'put your unique phrase here');
-define('SECURE_AUTH_SALT', 'put your unique phrase here');
-define('LOGGED_IN_SALT',   'put your unique phrase here');
-define('NONCE_SALT',       'put your unique phrase here');
+define('AUTH_KEY',         '6[^|pLCYDm2BEwA1<8!DvweOdEa84Yf^=#H*6kxJm:yaafoS#)Pl3,*!-4p4NMOQ');
+define('SECURE_AUTH_KEY',  '%97DWJ4k7<#g3FiZ~Yq_{?6PuUU4m/sd=u2iaZ3 JucW!,wyPs@Q!;{N`H2DSx$_');
+define('LOGGED_IN_KEY',    '.q_`+Y=#*pQ[>8-z<mV3$hm}#hB2aSlfOYRH.#GQpBAa.YZmY#uV^5`uk([v[H!r');
+define('NONCE_KEY',        ';XjJIjZtB|hZPVi^`,#:Ez1 8T3@9L-VV{k^Gdd Xt37)ps^.Y(g)}Gfb~c7%v5<');
+define('AUTH_SALT',        'g4Zb*o}exr.$MT}a[oYfcVHR9Y4c&i8=|-A3UAlSg-9d!IxA<%&`K@|XL595Cd_F');
+define('SECURE_AUTH_SALT', '$6`)l_D[d1-t]mR.UcX>)[q?,iR%h4~%SG+8-`6ndzn&ZnUpGp,OT7#+koMcA-T[');
+define('LOGGED_IN_SALT',   'P7$~dCm8C;Jq>Z)H-vS>:^cH{MJX(*_^Dy T}3kU+o:6qe`/KL]7H9^( ?2US~ew');
+define('NONCE_SALT',       'y@ug&.JnUOLsscDn74dK;(T>)?vB<2uZ@y!?MRXw>uOa+;.Wey46}WA%q}mOj`iC');
 
 /**#@-*/
 
@@ -63,7 +63,7 @@ define('NONCE_SALT',       'put your unique phrase here');
  * You can have multiple installations in one database if you give each
  * a unique prefix. Only numbers, letters, and underscores please!
  */
-$table_prefix  = 'aokc_';
+$table_prefix  = 'aokcv1_';
 
 /**
  * For developers: WordPress debugging mode.
@@ -77,7 +77,7 @@ $table_prefix  = 'aokc_';
  *
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
-define('WP_DEBUG', true);
+define('WP_DEBUG', false);
 
 /* That's all, stop editing! Happy blogging. */
 
