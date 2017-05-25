@@ -316,6 +316,57 @@ function custom_post_type() {
     // Registering your Team Post Type
     register_post_type( 'team_type', $args );
 
+
+    ////////
+
+    // Set UI labels for Team Post Type
+    $labels = array(
+        'name'                => _x( 'Impact', 'Post Type General Name', 'twentythirteen' ),
+        'singular_name'       => _x( 'Impact', 'Post Type Singular Name', 'twentythirteen' ),
+        'menu_name'           => __( 'Impact', 'twentythirteen' ),
+        'parent_item_colon'   => __( 'Parent Impact', 'twentythirteen' ),
+        'all_items'           => __( 'All Impact', 'twentythirteen' ),
+        'view_item'           => __( 'View Impact', 'twentythirteen' ),
+        'add_new_item'        => __( 'Add New Impact', 'twentythirteen' ),
+        'add_new'             => __( 'Add New', 'twentythirteen' ),
+        'edit_item'           => __( 'Edit Impact', 'twentythirteen' ),
+        'update_item'         => __( 'Update Impact', 'twentythirteen' ),
+        'search_items'        => __( 'Search Impact', 'twentythirteen' ),
+        'not_found'           => __( 'Not Found', 'twentythirteen' ),
+        'not_found_in_trash'  => __( 'Not found in Trash', 'twentythirteen' ),
+    );
+
+    // Set other options for Impact Post Type
+
+    $args = array(
+        'label'               => __( 'impact_type', 'twentythirteen' ),
+        'description'         => __( 'Impact', 'twentythirteen' ),
+        'labels'              => $labels,
+        // Features this CPT supports in Post Editor
+        'supports'            => array( 'title', 'editor', 'thumbnail' ),
+        // You can associate this CPT with a taxonomy or custom taxonomy.
+        //'taxonomies'          => array( 'genres' ),
+        /* A hierarchical CPT is like Pages and can have
+        * Parent and child items. A non-hierarchical CPT
+        * is like Posts.
+        */
+        'hierarchical'        => false,
+        'public'              => true,
+        'show_ui'             => true,
+        'show_in_menu'        => true,
+        'show_in_nav_menus'   => true,
+        'show_in_admin_bar'   => true,
+        'menu_position'       => 20,
+        'can_export'          => true,
+        'has_archive'         => true,
+        'exclude_from_search' => false,
+        'publicly_queryable'  => true,
+        'capability_type'     => 'page',
+    );
+
+    // Registering your Impact Post Type
+    register_post_type( 'impact_type', $args );
+
 }
 
 /* Hook into the 'init' action so that the function

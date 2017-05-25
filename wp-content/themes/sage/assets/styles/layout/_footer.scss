@@ -178,11 +178,17 @@
 		color: #333;
 	}
 
+	.list-inline {
+		> li {
+			margin: 0 10px;
+		}
+	}
+
 
 	.site-footer-bottom {
 		text-align: center;
 		border-top: 1px solid #ddd;
-		margin-top: 50px;
+		margin-top: 40px;
 		padding-top: 30px;
 	}
 
@@ -196,6 +202,13 @@
 			color: #333;
 
 		}
+	}
+
+
+	.copyright {
+		margin: 20px 0 0;
+		font-size: 14px;
+		color: #848484;
 	}
 
 

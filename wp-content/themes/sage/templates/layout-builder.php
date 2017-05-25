@@ -6,7 +6,7 @@ if( have_rows('layout_modules') ):
 
         if( get_row_layout() == 'bl_recent_project' ): ?>
 
-            <?php get_template_part('templates/layout-builder', 'recent-project'); ?>
+            <?php get_template_part('templates/layout-builder', 'projects'); ?>
 
         <?php elseif( get_row_layout() == 'featured_blocks' ): ?>
 
@@ -16,9 +16,9 @@ if( have_rows('layout_modules') ):
 
             <?php get_template_part('templates/layout-builder', 'banner-slider'); ?>
 
-        <?php elseif( get_row_layout() == 'we_want_to_change' ): ?>
+        <?php elseif( get_row_layout() == 'impact_builder' ): ?>
 
-            <?php get_template_part('templates/layout-builder', 'wwwtc'); ?>
+            <?php get_template_part('templates/layout-builder', 'impact'); ?>
 
         <?php elseif( get_row_layout() == 'fundraise_list' ): ?>
 
@@ -31,6 +31,10 @@ if( have_rows('layout_modules') ):
         <?php elseif( get_row_layout() == 'partners' ): ?>
 
             <?php get_template_part('templates/layout-builder', 'partners'); ?>
+
+        <?php elseif( get_row_layout() == 'contact' ): ?>
+
+            <?php get_template_part('templates/layout-builder', 'contact'); ?>
 
         <?php endif;
 

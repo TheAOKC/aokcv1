@@ -1,16 +1,15 @@
 <div class="causes-s2-page">
 
-    <!-- start causes-s2 -->
     <section class="causes-s2 recent-causes section-padding">
         <div class="container">
             <div class="row section-title">
                 <div class="col col-md-8 col-md-offset-2">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
                 </div>
-            </div> <!-- end section-title -->
+            </div>
 
 
-            <?php if( have_rows('brand_list') ): ?>
+            <?php  if( have_rows('brand_list') ): ?>
             <div class="row causes-s2-grids">
 
                 <?php while( have_rows('brand_list') ): the_row(); ?>
@@ -44,11 +43,12 @@
 
                 <?php endwhile; ?>
 
-            </div> <!-- end row -->
+            </div>
+
             <?php endif; ?>
 
-        </div> <!-- end container -->
+        </div>
+
     </section>
-    <!-- end causes-s2 -->
 
 </div>

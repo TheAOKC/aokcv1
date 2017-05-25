@@ -1,28 +1,53 @@
-<!-- start of hero -->
-<section class="hero hero-slider-wrapper hero-slider-s1">
-    <div class="hero-slider">
-        <div class="slide row">
-            <img src="http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_lossy,h_1500,w_2000,f_auto,q_auto/v1/792431/IMG_0551_copy_2_wgzye1.jpg" alt class="slider-bg">
-            <div class="container">
-                <div class="row">
-                    <div class="col col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 slide-caption">
-                        <h1>Change Someone's Life with the gift of learning</h1>
-                        <a href="#" class="btn btn-primary">Give Now</a>
+<?php use Roots\Sage\Titles; ?>
+
+<?php $bcount = 0; if( have_rows('banner_slides_list') ): ?>
+
+    <section class="hero hero-slider-wrapper hero-slider-s1">
+        <div class="hero-slider">
+            <?php while( have_rows('banner_slides_list') ): the_row();  $bcount++; ?>
+
+                <div class="slide row">
+                    <img src="<?php the_sub_field('banner_slide_bg'); ?>" alt class="slider-bg">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 slide-caption">
+                                <h1><?php the_sub_field('banner_slide_title'); ?></h1>
+
+                                <?php the_sub_field('banner_slide_desc'); ?>
+
+                                <?php $banner_slide_link = get_sub_field('banner_slide_link'); ?>
+
+                                <?php if( $banner_slide_link["title"] ) : ?>
+                                    <a href="<?php echo $banner_slide_link["url"]; ?>" class="btn btn-primary"  target="<?php echo $banner_slide_link["target"]; ?>">
+                                        <?php echo $banner_slide_link["title"]; ?>
+                                    </a>
+                                <?php endif; ?>
+
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+
+            <?php endwhile; ?>
         </div>
-        <div class="slide row">
-            <img src="http://themexriver.com/charity-world/multi-page/charityworld/images/slider/slide-2.jpg" alt class="slider-bg">
-            <div class="container" style="z-index:999999;">
-                <div class="row">
-                    <div class="col col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 slide-caption">
-                        <h1>Don’t let this beauty disappear. Fight with us.</h1>
-                        <a href="#" class="btn btn-primary">Give Now</a>
-                    </div>
-                </div>
-            </div>
+    </section>
+
+
+    <?php  if( $bcount <= 1 ): ?>
+
+        <style>
+            .hero .hero-slider .owl-controls {
+                display: none;
+            }
+        </style>
+    <?php endif; ?>
+
+<?php else: ?>
+
+    <section class="page-title-wrapper">
+        <div class="page-title">
+            <h1><?= Titles\title(); ?></h1>
         </div>
-    </div>
-</section>
-<!-- end of hero slider -->
+    </section>
+
+<?php endif; ?>

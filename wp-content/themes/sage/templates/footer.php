@@ -1,3 +1,16 @@
+<?php if( !is_front_page() ) : ?>
+<section class="impact-hero">
+  <div class="container">
+    <div class="row section-title">
+      <h2>Make an impact</h2>
+      <p>Join us with a recurring donation and you
+        can help transform lives every month</p>
+
+      <a href="https://www.nowdonate.com/checkout/030h33cigpx6wg684ot8" class="btn btn-primary" target="_blank">Give NOw</a>
+    </div>
+  </div>
+</section>
+<?php endif; ?>
 
 <!-- start cta -->
 <section class="cta parallax" data-bg-image="images/cta-bg.jpg" data-speed="3">
@@ -27,20 +40,18 @@
 <footer class="site-footer site-footer-2">
   <div class="container">
 
-    <ul class="list-inline">
-      <li><a href="#">Privacy Policy</a></li>
-      <li><a href="#">Terms and conditions</a></li>
-      <li><a href="#">Contact</a></li>
-      <li><a href="#">Design by Pixel and Ink</a></li>
-    </ul>
+    <?php
+      if (has_nav_menu('footer_navigation')) :
+        wp_nav_menu(['theme_location' => 'footer_navigation', 'menu_class' => 'list-inline', 'container' => false]);
+      endif;
+    ?>
+
+    <p class="copyright">&copy; <?php echo date("Y"); ?> Acts of Kindness Collection (UK Registered Charity No. 1146796). All right reserved</p>
 
     <div class="site-footer-bottom">
       <ul class="social-links">
-        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+        <li><a href="https://www.facebook.com/TheActsofKindnessCollective/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="https://www.instagram.com/theaokc/" target="_blank"><i class="fa fa-instagram"></i></a></li>
       </ul>
     </div>
   </div> <!-- end container -->

@@ -129,7 +129,7 @@
       $(".hero-slider").owlCarousel({
         items: 1,
         autoplay: true,
-        loop: true,
+        loop: false,
         mouseDrag: false,
         smartSpeed: 800,
         navSpeed: 800,
