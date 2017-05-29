@@ -1,6 +1,6 @@
 <?php if( get_sub_field('project_listing_display') == 'Recent' ) : ?>
 
-<section class="causes-s3 section-padding">
+<section class="causes-s3 home-project section-padding" style="background-image:url(<?php the_sub_field('project_background'); ?>);">
     <div class="container">
         <div class="section-title">
             <h2><?php the_sub_field('project_post_title'); ?></h2>

@@ -45,8 +45,7 @@
         wp_nav_menu(['theme_location' => 'footer_navigation', 'menu_class' => 'list-inline', 'container' => false]);
       endif;
     ?>
-
-    <p class="copyright">&copy; <?php echo date("Y"); ?> Acts of Kindness Collection (UK Registered Charity No. 1146796). All right reserved</p>
+    <p class="copyright"><?php echo the_field('footer_copyright', 'option');?></p>
 
     <div class="site-footer-bottom">
       <ul class="social-links">

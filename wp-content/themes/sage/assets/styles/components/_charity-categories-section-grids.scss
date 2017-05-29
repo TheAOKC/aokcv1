@@ -20,7 +20,7 @@
 		background-color: $theme-primary-color;
 	}
 
-	.grid:hover .info h3 a,
+	.grid:hover .info h3,
 	.grid:hover .info p,
 	.grid:hover .icon i:before,
 	.grid:hover .details {
@@ -44,6 +44,7 @@
 		font-size: calc-rem-value(22);
 		margin: 0.5em 0;
 		text-transform: uppercase;
+		color: $heading-color;
 
 		@include media-query(1199px) {
 			font-size: 22px;
@@ -83,4 +84,13 @@
 			font-size: calc-rem-value(17);
 		}
 	}
+}
+
+.f-block-icon {
+	display: inline-block;
+	width: 142px;
+	height: 142px;
+	border-radius: 100%;
+	padding: 6px;
+	background: #fff;
 }

@@ -64,7 +64,9 @@
 
                         <div id="countID-<?php echo $countID; ?>" class="media">
                             <div class="media-left">
-                                <img src="//images.contentful.com/wcneouoynfwj/UvKiPLs6C4UCeCg6GCc66/37b210a910930a642beed9dcc63dc757/fernie.jpg?w=100&amp;h=100" class="media-object avatar">
+                                <div class="media-avatar">
+                                    <?php the_post_thumbnail('thumb'); ?>
+                                </div>
                             </div>
                             <div class="media-body">
                                 <h2><?php the_title(); ?></h2>

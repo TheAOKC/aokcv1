@@ -36,9 +36,7 @@
 		background-color: #2f2f2f;
 
 
-		h3 {
-			color: #fff;
-		}
+
 	}
 
 	@include media-query(991px) {
@@ -577,6 +575,24 @@
 
 
 
+.home-project {
+	padding-bottom: 800px;
+
+	@include media-query(1124px) {
+		padding-bottom: 600px;
+	}
+
+	@include media-query(991px) {
+		padding-bottom: 500px;
+	}
+
+	@include media-query(768px) {
+		padding-bottom: 50px;
+	}
+
+
+}
+
 
 /*--------------------------------------------------------------
 # We want to change
@@ -584,6 +600,8 @@
 .to-change-section {
 	padding: 64px 0 0;
 }
+
+
 
 .to-change-holder {
 
@@ -645,6 +663,41 @@
 					> span {
 						background-color: rgba(0, 0, 0, 0.56);
 					}
+				}
+			}
+
+
+			@include media-query(1124px) {
+				> a {
+					height: 500px;
+
+					h3 {
+						font-size: 30px;
+					}
+				}
+
+			}
+			@include media-query(991px) {
+				width: 50%;
+
+				> a {
+					height: 400px;
+
+				}
+			}
+
+			@include media-query(420px) {
+				width: 100%;
+				float: none;
+
+				> a {
+					height: 220px;
+
+
+					h3 {
+						font-size: 22px;
+					}
+
 				}
 			}
 		}

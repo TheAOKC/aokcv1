@@ -16,12 +16,6 @@ function acf_option_page_function() {
             'redirect'	=> false
         ));
 
-        acf_add_options_sub_page(array(
-            'page_title' 	=> 'Page Options',
-            'menu_title'	=> 'Page Options',
-            'parent_slug'	=> 'cwm-options',
-        ));
-
     }
 }
 
