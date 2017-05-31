@@ -578,6 +578,13 @@
 .home-project {
 	padding-bottom: 800px;
 
+	.section-footer {
+		text-align: center;
+		margin-top: 40px;
+
+	}
+
+
 	@include media-query(1124px) {
 		padding-bottom: 600px;
 	}

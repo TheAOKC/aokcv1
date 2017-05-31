@@ -5,8 +5,7 @@
     $args = array(
         'post_type' => 'impact_type',
         'posts_per_page' => -1,
-        'post_status' => 'publish',
-        'impact_categories'  => 'on-going'
+        'post_status' => 'publish'
 
     );
     $the_query = new WP_Query( $args );
@@ -45,8 +44,7 @@
     $args = array(
         'post_type' => 'impact_type',
         'posts_per_page' => -1,
-        'post_status' => 'publish',
-        'impact_categories'  => 'on-going'
+        'post_status' => 'publish'
 
     );
     $the_query = new WP_Query( $args );

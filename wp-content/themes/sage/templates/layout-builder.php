@@ -12,10 +12,6 @@ if( have_rows('layout_modules') ):
 
             <?php get_template_part('templates/layout-builder', 'featured-blocks'); ?>
 
-        <?php elseif( get_row_layout() == 'banner_slider' ): ?>
-
-            <?php get_template_part('templates/layout-builder', 'banner-slider'); ?>
-
         <?php elseif( get_row_layout() == 'impact_builder' ): ?>
 
             <?php get_template_part('templates/layout-builder', 'impact'); ?>
@@ -27,6 +23,10 @@ if( have_rows('layout_modules') ):
         <?php elseif( get_row_layout() == 'team_list' ): ?>
 
             <?php get_template_part('templates/layout-builder', 'team'); ?>
+
+        <?php elseif( get_row_layout() == 'hero' ): ?>
+
+            <?php get_template_part('templates/layout-builder', 'hero'); ?>
 
         <?php elseif( get_row_layout() == 'partners' ): ?>
 

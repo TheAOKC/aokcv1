@@ -30,17 +30,23 @@
 
             <?php endwhile; ?>
         </div>
+
+        <?php  if( $bcount <= 1 ): ?>
+
+            <style>
+                .hero .hero-slider .owl-controls {
+                    display: none;
+                }
+
+                .hero-slider-wrapper + .page-title-wrapper {
+                    display: none!important;
+                }
+            </style>
+        <?php endif; ?>
     </section>
 
 
-    <?php  if( $bcount <= 1 ): ?>
 
-        <style>
-            .hero .hero-slider .owl-controls {
-                display: none;
-            }
-        </style>
-    <?php endif; ?>
 
 <?php else: ?>
 
@@ -51,3 +57,6 @@
     </section>
 
 <?php endif; ?>
+
+
+

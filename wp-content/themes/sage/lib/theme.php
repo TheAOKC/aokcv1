@@ -371,7 +371,7 @@ function custom_post_type() {
 add_action( 'init', 'custom_post_type', 0 );
 
 
-function create_impact_taxonomies() {
+function create_project_taxonomies() {
     $labels = array(
         'name'              => _x( 'Categories', 'taxonomy general name' ),
         'singular_name'     => _x( 'Category', 'taxonomy singular name' ),
@@ -395,9 +395,9 @@ function create_impact_taxonomies() {
         'rewrite'           => array( 'slug' => 'categories' ),
     );
 
-    register_taxonomy( 'impact_categories', array( 'impact_type' ), $args );
+    register_taxonomy( 'projects', array( 'project' ), $args );
 }
-add_action( 'init', 'create_impact_taxonomies', 0 );
+add_action( 'init', 'create_project_taxonomies', 0 );
 
 
 
