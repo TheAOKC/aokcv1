@@ -20,45 +20,47 @@
 
         <?php if ( $the_query->have_posts() ) : ?>
 
-            <div class="causes-s3-grids causes-s3-slider carousel-dots-with-nav">
+            <div class="row causes-s3-grids carousel-dots-with-nav">
 
                 <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-                    <div class="grid">
-                        <div class="img-holder">
-                            <a href="<?php echo get_template_directory_uri(); ?>/assets/images/causes-s3/img-1.jpg" class="fancybox"><i class="fa fa-link"></i></a>
-                            <?php
-                            if ( has_post_thumbnail() ) {
-                                the_post_thumbnail( 'project-thumb', ['class' => 'img img-responsive'] );
-                            } else {
-                                echo '<img src="'. get_template_directory_uri(). '/assets/images/causes-s3/img-1.jpg" alt class="img img-responsive">';
-                            }
+                   <div class="col-sm-4">
+                       <div class="grid">
+                           <div class="img-holder">
+                               <a href="<?php echo get_template_directory_uri(); ?>/assets/images/causes-s3/img-1.jpg" class="fancybox"><i class="fa fa-link"></i></a>
+                               <?php
+                               if ( has_post_thumbnail() ) {
+                                   the_post_thumbnail( 'project-thumb', ['class' => 'img img-responsive'] );
+                               } else {
+                                   echo '<img src="'. get_template_directory_uri(). '/assets/images/causes-s3/img-1.jpg" alt class="img img-responsive">';
+                               }
 
-                            ?>
-                        </div>
-                        <div class="details">
+                               ?>
+                           </div>
+                           <div class="details">
 
-                            <div class="meter-3" data-value="0.65">
-                                <span></span>
-                            </div>
+                               <div class="meter-3" data-value="0.65">
+                                   <span></span>
+                               </div>
 
-                            <h3><a href="#"><?php the_title(); ?></a></h3>
-                            <?php the_excerpt(); ?>
+                               <h3><a href="#"><?php the_title(); ?></a></h3>
+                               <?php the_excerpt(); ?>
 
-                            <div class="goal-raised">
-                                <div>
-                                    <h4>Raised</h4>
-                                    <span>$<?php the_field('project_raised');?></span>
-                                </div>
-                                <div>
-                                    <h4>Goal</h4>
-                                    <span>$<?php the_field('project_goal');?></span>
-                                </div>
-                            </div>
+                               <div class="goal-raised">
+                                   <div>
+                                       <h4>Raised</h4>
+                                       <span>$<?php the_field('project_raised');?></span>
+                                   </div>
+                                   <div>
+                                       <h4>Goal</h4>
+                                       <span>$<?php the_field('project_goal');?></span>
+                                   </div>
+                               </div>
 
-                            <a href=https://www.nowdonate.com/checkout/b448w5mw8m3ko06i8oy4" class="btn theme-btn" target="_blank">Make an Impact</a>
-                        </div>
+                               <a href=https://www.nowdonate.com/checkout/b448w5mw8m3ko06i8oy4" class="btn theme-btn" target="_blank">Make an Impact</a>
+                           </div>
 
-                    </div>
+                       </div>
+                   </div>
                 <?php endwhile; ?>
 
             </div>
@@ -67,9 +69,9 @@
 
 
 
-        <?php $recent_vlink = get_sub_field('recent_vlink'); ?>
-        <?php if( $recent_vlink["title"] ) : ?>
-            <a href="<?php echo $recent_vlink["url"]; ?>" class="btn btn-primary" target="<?php echo $recent_vlink["target"]; ?>"><?php echo $recent_vlink["title"]; ?></a>
+        <?php $project_vlink = get_sub_field('project_vlink'); ?>
+        <?php if( $project_vlink["title"] ) : ?>
+            <a href="<?php echo $project_vlink["url"]; ?>" class="btn btn-secondary" target="<?php echo $project_vlink["target"]; ?>"><?php echo $project_vlink["title"]; ?></a>
         <?php endif; ?>
 
         <?php wp_reset_query(); ?>

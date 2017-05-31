@@ -4,8 +4,9 @@
     <?php
     $args = array(
         'post_type' => 'impact_type',
-        'posts_per_page' => 4,
-        'post_status' => 'publish'
+        'posts_per_page' => -1,
+        'post_status' => 'publish',
+        'impact_categories'  => 'on-going'
 
     );
     $the_query = new WP_Query( $args );
@@ -44,7 +45,8 @@
     $args = array(
         'post_type' => 'impact_type',
         'posts_per_page' => -1,
-        'post_status' => 'publish'
+        'post_status' => 'publish',
+        'impact_categories'  => 'on-going'
 
     );
     $the_query = new WP_Query( $args );
@@ -57,6 +59,7 @@
             <div class="container">
                 <div class="row section-title">
                     <div class="col col-md-8 col-md-offset-2">
+                        <h3>On-going projects</h3>
                         <p>Join Team Camfed today and help raise money to support girls' education in Africa. Whether you hold an event at school or work, take to the streets to run a marathon or fundraise with friends, there are lots of ways to get involved.</p>
                     </div>
                 </div> <!-- end section-title -->
@@ -90,6 +93,49 @@
                     <?php endwhile; ?>
 
                 </div> <!-- end row -->
+
+                <div class="row section-title mt-40px">
+                    <div class="col col-md-8 col-md-offset-2">
+                        <h3>Old Projects</h3>
+                    </div>
+                </div> <!-- end section-title -->
+
+                <div class="s-block">
+
+                    <?php
+                    $args = array(
+                        'post_type' => 'impact_type',
+                        'posts_per_page' => -1,
+                        'post_status' => 'publish',
+                        'impact_categories'  => 'past'
+
+                    );
+                    $the_query = new WP_Query( $args );
+                    ?>
+
+                    <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                        <div class="row ">
+                            <div class="col-sm-4">
+                                <div class=" s-item-text-group half-offset-right">
+                                    <div class="s-item-title">
+                                        <div class="s-component s-text">
+                                            <h3 class="s-component-content s-font-heading"><?php the_title(); ?></h3>
+                                        </div>
+                                    </div>
+                                    <div class="s-component-content s-font-body">
+                                        <?php the_content(); ?>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-8 s-block-feature">
+                                <img src="http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/v1/792431/EPA_image_for_homepage_yvo1rj.jpg" alt="">
+                            </div>
+                        </div>
+                    <?php endwhile; ?>
+
+
+                </div>
 
             </div> <!-- end container -->
         </section>

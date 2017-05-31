@@ -1,0 +1,40 @@
+.s-item-text-group {
+  background: #fff;
+  padding: 20px 32px;
+}
+
+h3.s-component-content.s-font-heading {
+  margin-top: 0;
+}
+
+.s-item-subtitle {
+  font-size: 17px;
+}
+
+h6.s-component-content.s-font-body {
+  font-size: 16px;
+  font-style: italic;
+}
+
+.s-component-content.s-font-body {
+  font-size: 14px;
+}
+
+.s-block-feature {
+  img {
+    max-width: 100%;
+  }
+}
+
+.s-block {
+  .row {
+    margin-bottom: 30px;
+
+    &:nth-child(2n) {
+
+      .col-sm-4 {
+        float: right;
+      }
+    }
+  }
+}

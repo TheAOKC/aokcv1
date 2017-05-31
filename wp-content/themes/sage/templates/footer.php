@@ -49,8 +49,34 @@
 
     <div class="site-footer-bottom">
       <ul class="social-links">
-        <li><a href="https://www.facebook.com/TheActsofKindnessCollective/" target="_blank"><i class="fa fa-facebook"></i></a></li>
-        <li><a href="https://www.instagram.com/theaokc/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+
+          <?php if( get_field('social_facebook','option') ) :?>
+            <li>
+                <a href="<?php echo get_field('social_facebook','option'); ?>" target="_blank"><i class="fa fa-facebook"></i></a>
+            </li>
+          <?php endif; ?>
+
+          <?php if( get_field('social_instagram','option') ) :?>
+            <li>
+                <a href="<?php echo get_field('social_instagram','option'); ?>" target="_blank"><i class="fa fa-instagram"></i></a>
+            </li>
+          <?php endif; ?>
+          <?php if( get_field('social_twitter','option') ) :?>
+            <li>
+                <a href="<?php echo get_field('social_twitter','option'); ?>" target="_blank"><i class="fa fa-twitter"></i></a>
+            </li>
+          <?php endif; ?>
+          <?php if( get_field('social_googleplus','option') ) :?>
+            <li>
+                <a href="<?php echo get_field('social_googleplus','option'); ?>" target="_blank"><i class="fa fa-google-plus"></i></a>
+            </li>
+          <?php endif; ?>
+          <?php if( get_field('social_youtube','option') ) :?>
+            <li>
+                <a href="<?php echo get_field('social_youtube','option'); ?>" target="_blank"><i class="fa fa-youtube"></i></a>
+            </li>
+          <?php endif; ?>
+
       </ul>
     </div>
   </div> <!-- end container -->
