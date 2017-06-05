@@ -5,6 +5,15 @@
 
 h3.s-component-content.s-font-heading {
   margin-top: 0;
+
+  a {
+    color: #333;
+
+
+    &:hover {
+      color: $powder-green;
+    }
+  }
 }
 
 .s-item-subtitle {
@@ -17,13 +26,13 @@ h6.s-component-content.s-font-body {
 }
 
 .s-component-content.s-font-body {
-  font-size: 14px;
+  font-size: 15px;
   margin-bottom: 50px;
 }
 
 .s-block-feature {
   img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
   }
 }

@@ -160,7 +160,7 @@
 			line-height: 35px;
 
 			@include media-query(767px) {
-				font-size: 14px;
+				font-size: 15px;
 				font-size: calc-rem-value(14);
 			}
 
@@ -208,7 +208,7 @@
 		}
 
 		p {
-			font-size: 14px;
+			font-size: 15px;
 		}
 
 		.tab-pane p:last-child {
@@ -299,7 +299,7 @@
 			.name-rating-time > div,
 			.name-rating > div {
 				display: inline-block;
-				font-size: 14px;
+				font-size: 15px;
 
 				@include media-query(767px) {
 					font-size: 12px;
@@ -312,7 +312,7 @@
 			}
 
 			.rating {
-				font-size: 14px;
+				font-size: 15px;
 				padding-left: 10px;
 
 				@include media-query(767px) {
@@ -334,7 +334,7 @@
 			.review-body {
 				padding-top: 8px;
 				p {
-					font-size: 14px;
+					font-size: 15px;
 				}
 			}
 		}
@@ -396,7 +396,7 @@
 				}
 
 				.rating a {
-					font-size: 14px;
+					font-size: 15px;
 					color: lighten($black, 80%);
 					display: inline-block;
 					margin-right: 10px;

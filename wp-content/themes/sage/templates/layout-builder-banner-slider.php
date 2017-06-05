@@ -45,9 +45,6 @@
         <?php endif; ?>
     </section>
 
-
-
-
 <?php else: ?>
 
     <section class="page-title-wrapper">

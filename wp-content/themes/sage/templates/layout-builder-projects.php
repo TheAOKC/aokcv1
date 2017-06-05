@@ -57,7 +57,7 @@
                                    </div>
                                </div>
 
-                               <a href=https://www.nowdonate.com/checkout/b448w5mw8m3ko06i8oy4" class="btn theme-btn" target="_blank">Make an Impact</a>
+                               <a href="<?php the_field('donate_link', 'option'); ?>" class="btn theme-btn" target="_blank">Make an Impact</a>
                            </div>
 
                        </div>
@@ -118,7 +118,7 @@
                                 <div class=" s-item-text-group half-offset-right">
                                     <div class="s-item-title">
                                         <div class="s-component s-text">
-                                            <h3 class="s-component-content s-font-heading"><?php the_title(); ?></h3>
+                                            <h3 class="s-component-content s-font-heading"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                                         </div>
                                     </div>
                                     <div class="s-component-content s-font-body">
@@ -139,7 +139,7 @@
                                         </div>
                                     </div>
 
-                                    <a href="https://www.nowdonate.com/checkout/b448w5mw8m3ko06i8oy4" class="btn theme-btn-s3" target="_blank">Donate</a>
+                                    <a href="<?php the_field('donate_link', 'option'); ?>" class="btn theme-btn-s3" target="_blank">Donate</a>
                                 </div>
 
 

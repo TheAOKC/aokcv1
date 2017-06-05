@@ -10,6 +10,10 @@
 
 .event-single-page .event-single-wrapper {
 
+	.entry-image {
+		margin-bottom: 0;
+	}
+
 	.event-single-date-slider {
 		padding-top: 41px;
 		position: relative;
@@ -117,6 +121,7 @@
 
 		.event-info {
 			overflow: hidden;
+			margin-bottom: 20px;
 
 			li {
 				font-family: $heading-font;

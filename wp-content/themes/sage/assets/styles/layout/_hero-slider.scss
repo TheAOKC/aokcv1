@@ -3,7 +3,7 @@
 --------------------------------------------------------------*/
 .hero {
 	position: relative;
-	height: 75vh;
+	height: 100vh;
 
 	@include media-query(991px) {
 		min-height: 500px;
@@ -14,7 +14,7 @@
 	}
 
 	.slide {
-		height: 75vh;
+		height: 100vh;
 		margin: 0;
 
 		@include media-query(991px) {
@@ -40,10 +40,10 @@
 		.container {
 			height: 100%;
 			position: relative;
-		    top: 50%;
-		    @include translatingY();
+			top: 50%;
+			@include translatingY();
 
-		    @include media-query(767px) {
+			@include media-query(767px) {
 				padding: 0 25px;
 			}
 		}
@@ -51,10 +51,10 @@
 		.col {
 			text-align: center;
 			position: absolute;
-		    top: 50%;
-		    @include translatingY();
+			top: 50%;
+			@include translatingY();
 
-		    @include media-query(767px) {
+			@include media-query(767px) {
 				padding: 0 25px;
 			}
 		}
@@ -123,7 +123,7 @@
 
 	.hero-slider .owl-controls .owl-dots {
 		display: none !important;
-		
+
 		span {
 			background: $white;
 			width: 12px;
@@ -254,10 +254,10 @@
 		.col {
 			text-align: left;
 			position: absolute;
-		    top: 55%;
-		    @include translatingY();
+			top: 55%;
+			@include translatingY();
 
-		    @include media-query(1199px) {
+			@include media-query(1199px) {
 				top: 63%;
 			}
 
@@ -265,7 +265,7 @@
 				top: 50%;
 			}
 
-		    @include media-query(767px) {
+			@include media-query(767px) {
 				padding: 0 10px;
 			}
 		}
@@ -368,7 +368,7 @@
 
 		@include widther(1200px) {
 			min-height: 880px;
-		}	
+		}
 
 		@include media-query(767px) {
 			min-height: 500px;
@@ -451,7 +451,7 @@
 
 	.hero-slider .owl-controls .owl-nav .owl-prev {
 		left: -25px;
-		
+
 		i {
 			position: relative;
 			left: 10px;
@@ -478,7 +478,7 @@
 
 	.hero-slider .owl-controls .owl-nav .owl-next:hover {
 		right: -8px;
-		
+
 		i {
 			right: 0;
 		}

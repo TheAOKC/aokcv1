@@ -62,7 +62,7 @@
 	@include media-query(767px) {
 		height: 35px;
 		line-height: 35px;
-		font-size: 14px;
+		font-size: 15px;
 		font-size: calc-rem-value(14);
 		padding: 0 30px;
 	}
@@ -80,7 +80,7 @@
 	background-color: $theme-secondary-color;
 	height: 30px;
 	line-height: 30px;
-	font-size: 14px;
+	font-size: 15px;
 	font-size: calc-rem-value(14);
 	font-weight: 600;
 	color: $white;

@@ -1,15 +1,17 @@
 <?php if( !is_front_page() ) : ?>
-<section class="impact-hero">
-  <div class="container">
-    <div class="row section-title">
-      <h2>Make an impact</h2>
-      <p>Join us with a recurring donation and you
-        can help transform lives every month</p>
+    <section class="impact-hero">
+      <div class="container">
+        <div class="row section-title">
+          <h2><?php the_field('sfoter_title','option'); ?></h2>
+            <?php the_field('sfoter_content','option'); ?>
 
-      <a href="https://www.nowdonate.com/checkout/030h33cigpx6wg684ot8" class="btn btn-primary" target="_blank">Give NOw</a>
-    </div>
-  </div>
-</section>
+            <?php $donate_link = get_field('sfoter_link', 'option'); ?>
+            <?php if( $donate_link["title"] ) : ?>
+                <a href="<?php echo $donate_link["url"]; ?>" class="btn btn-primary" target="<?php echo $donate_link["target"]; ?>"><?php echo $donate_link["title"]; ?></a>
+            <?php endif; ?>
+        </div>
+      </div>
+    </section>
 <?php endif; ?>
 
 <!-- start cta -->

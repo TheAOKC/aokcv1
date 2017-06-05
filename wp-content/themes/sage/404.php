@@ -1,4 +1,5 @@
-<div class="masterhead masterhead-empty"></div>
+<?php get_template_part('templates/page', 'header'); ?>
+
 <div class="page-404">
   <div class="container">
     <h1>404</h1>
