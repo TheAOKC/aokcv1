@@ -11,7 +11,6 @@
         $args = array(
             'post_type' => 'project',
             'posts_per_page' => 4,
-            'posts_per_page' => get_sub_field('project_post_limit'),
             'post_status' => 'publish',
             'impact_categories'  => 'on-going'
 
@@ -147,7 +146,7 @@
                             </div>
 
                             <div class="col-sm-8 s-block-feature">
-                                <img src="http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/v1/792431/EPA_image_for_homepage_yvo1rj.jpg" alt="">
+                                <?php the_post_thumbnail(); ?>
                             </div>
                         </div>
                     <?php endwhile; ?>

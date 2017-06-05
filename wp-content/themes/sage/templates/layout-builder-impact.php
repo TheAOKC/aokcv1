@@ -1,48 +1,53 @@
 <?php if( get_sub_field('impact_listing_type') == 'Featured' ) : ?>
-
-
-    <?php
-    $args = array(
-        'post_type' => 'impact_type',
-        'posts_per_page' => -1,
-        'post_status' => 'publish'
-
-    );
-    $the_query = new WP_Query( $args );
-    ?>
-
-    <?php if ( $the_query->have_posts() ) : ?>
     <div class="to-change-section">
-        <div class="section-title">
-            <h2>What we want to change</h2>
-        </div>
 
-        <div class="to-change-holder clearfix">
-            <ul>
-                <?php while ( $the_query->have_posts() ) : $the_query->the_post();?>
+        <?php if( get_sub_field('impact_title') ) : ?>
+            <div class="section-title">
+                <h2><?php the_sub_field('impact_title'); ?></h2>
+            </div>
+        <?php endif; ?>
 
-                    <li>
-                        <a href="<?php the_permalink(); ?>" style="background-image: url('<?php echo the_post_thumbnail_url('full'); ?>');">
-                            <span></span>
-                            <h3><?php the_title(); ?></h3>
-                        </a>
-                    </li>
-                <?php endwhile; ?>
+        <?php
+        $args = array(
+            'post_type' => 'impacts',
+            'posts_per_page' => 5,
+            'post_status' => 'publish'
+
+        );
+        $the_query = new WP_Query( $args );
+        ?>
+
+        <?php if ( $the_query->have_posts() ) : ?>
 
 
-                <?php wp_reset_query(); ?>
-            </ul>
-        </div>
+            <div class="to-change-holder clearfix">
+                <ul>
+                    <?php while ( $the_query->have_posts() ) : $the_query->the_post();?>
+
+                        <li>
+                            <a href="<?php the_permalink(); ?>" style="background-image: url('<?php echo the_post_thumbnail_url('full'); ?>');">
+                                <span></span>
+                                <div class="tch-content">
+                                    <h3><?php the_title(); ?></h3>
+                                    <?php the_excerpt(); ?>
+                                </div>
+                            </a>
+                        </li>
+                    <?php endwhile; ?>
+
+
+                    <?php wp_reset_query(); ?>
+                </ul>
+            </div>
+
+        <?php endif; ?>
+
     </div>
-
-
-
-    <?php endif; ?>
 
 <?php elseif( get_sub_field('impact_listing_type') == 'Listing' ) : ?>
     <?php
     $args = array(
-        'post_type' => 'impact_type',
+        'post_type' => 'impacts',
         'posts_per_page' => -1,
         'post_status' => 'publish'
 
@@ -102,7 +107,7 @@
 
                     <?php
                     $args = array(
-                        'post_type' => 'impact_type',
+                        'post_type' => 'impacts',
                         'posts_per_page' => -1,
                         'post_status' => 'publish',
                         'impact_categories'  => 'past'
@@ -127,7 +132,7 @@
                             </div>
 
                             <div class="col-sm-8 s-block-feature">
-                                <img src="http://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/v1/792431/EPA_image_for_homepage_yvo1rj.jpg" alt="">
+                                <?php the_post_thumbnail(); ?>
                             </div>
                         </div>
                     <?php endwhile; ?>

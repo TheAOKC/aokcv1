@@ -333,11 +333,11 @@ function custom_post_type() {
     // Set other options for Impact Post Type
 
     $args = array(
-        'label'               => __( 'impact_type', 'twentythirteen' ),
+        'label'               => __( 'impacts', 'twentythirteen' ),
         'description'         => __( 'Impact', 'twentythirteen' ),
         'labels'              => $labels,
         // Features this CPT supports in Post Editor
-        'supports'            => array( 'title', 'editor', 'thumbnail' ),
+        'supports'            => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
         // You can associate this CPT with a taxonomy or custom taxonomy.
         //'taxonomies'          => array( 'genres' ),
         /* A hierarchical CPT is like Pages and can have
@@ -359,7 +359,7 @@ function custom_post_type() {
     );
 
     // Registering your Impact Post Type
-    register_post_type( 'impact_type', $args );
+    register_post_type( 'impacts', $args );
 
 }
 

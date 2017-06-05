@@ -967,11 +967,11 @@
       var scroll = $(window).scrollTop();
       var top = $(".navigation").innerHeight();
 
-      // if ((scroll > top) && !header.hasClass("header-style-three")) {
-      //   header.addClass("sticky-s3");
-      // } else {
-      //   header.removeClass("sticky-s3");
-      // }
+      if ((scroll > top) && !header.hasClass("header-style-three")) {
+        header.addClass("sticky-s3");
+      } else {
+        header.removeClass("sticky-s3");
+      }
     }
 
     toggleBackToTopBtn();

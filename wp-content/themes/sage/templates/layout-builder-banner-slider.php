@@ -2,7 +2,7 @@
 
 <?php $bcount = 0; if( have_rows('banner_slides_list') ): ?>
 
-    <section class="hero hero-slider-wrapper hero-slider-s1">
+    <section class="hero hero-slider-wrapper hero-slider-s3">
         <div class="hero-slider">
             <?php while( have_rows('banner_slides_list') ): the_row();  $bcount++; ?>
 

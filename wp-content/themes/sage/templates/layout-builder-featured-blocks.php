@@ -7,7 +7,7 @@
         <?php  if( have_rows('block_list') ): ?>
         <div class="row charity-categories-section-grids">
             <?php while( have_rows('block_list') ): the_row(); ?>
-            <div class="col col-md-4 col-sm-6">
+            <div class="col col-sm-4">
                 <div class="grid">
                     <div class="icon">
 
