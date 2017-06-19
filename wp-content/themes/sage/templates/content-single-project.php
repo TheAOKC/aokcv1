@@ -1,94 +1,77 @@
 <?php while (have_posts()) : the_post(); ?>
 
-    <section class="causes-single-wrapper section-padding">
+    <section class="page-title-wrapper show" >
+        <div class="page-title none">
+        </div>
+    </section>
+
+    <style>
+        /*TEMP*/
+        .page-title-wrapper {
+            display: none;
+        }
+        .page-title-wrapper.show {
+            display: block;
+        }
+    </style>
+
+    <div class="page-main-content">
+
         <div class="container">
-            <div class="row content">
-                <div class="col col-md-9">
-                    <div class="causes-single">
-                        <div class="img-holder">
-                            <?php
-                            if ( has_post_thumbnail() ) {
-                                the_post_thumbnail( 'fundraise-thumb', ['class' => 'img img-responsive'] );
-                            } else {
-                                echo '<img src="'. get_template_directory_uri(). '/assets/images/causes-s3/img-1.jpg" alt class="img img-responsive">';
-                            }
-
-                            ?>
+            <div class="row causes">
+                <div class="col-sm-4">
+                    <div class=" s-item-text-group half-offset-right">
+                        <div class="s-item-title">
+                            <div class="s-component s-text">
+                                <h3 class="s-component-content s-font-heading"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                            </div>
+                        </div>
+                        <div class="s-component-content s-font-body">
+                            Created: <?php the_time('l, F jS, Y') ?>
                         </div>
 
+                        <div class="goal-raised">
+                            <div class="progress">
 
-                        <div class="causes-list-box">
-                            <div class="title">
-                                <h3><?php the_title();?></h3>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-s1" data-percent="55"></div>
-                                </div>
-                                <h4>Raised: <span>$<?php the_field('project_raised');?></span> / $<?php the_field('project_goal');?></h4>
+
+                                <?php $donationpercent = round((get_field('project_raised') / get_field('project_goal')) * 100) ; ?>
+                                <div class="progress-bar progress-bar-s2  appeared" data-percent="<?php echo $donationpercent; ?>" style="width: <?php echo $donationpercent; ?>%;"><span><?php echo $donationpercent; ?>%</span></div>
                             </div>
 
-
-                            <div class="inner-details">
-                                <?php the_content(); ?>
-
-                                <div class="donation-form quick-donation-section">
-                                    <div class="donate-btn ">
-                                        <a href="<?php the_field('donate_link', 'option'); ?>" class="btn btn-block theme-btn" target="_blank">Donate</a>
-                                    </div>
+                            <div class="goal-raised-inner">
+                                <div class="raised">
+                                    <h4>Raised: <span>$<?php the_field('project_raised');?></span></h4>
+                                </div>
+                                <div class="goal">
+                                    <h4>Goals: <span>$<?php the_field('project_goal');?></span></h4>
                                 </div>
                             </div>
                         </div>
+
+                        <a href="<?php the_field('donate_link', 'option'); ?>" class="btn theme-btn-s3" target="_blank">Donate</a>
                     </div>
+
+                    <div class="s-item-right-footer">
+
+                    </div>
+
+
                 </div>
 
+                <div class="col-sm-8 s-block-feature">
+                    <?php the_post_thumbnail(); ?>
 
-                <div class="col col-md-3 sidebar-wrapper">
-                    <div class="sidebar">
-                        <div class="widget search-widget">
-                            <form action="#" class="form">
-                                <div>
-                                    <input type="text" class="form-control" placeholder="Search here" required>
-                                    <button type="submit" class="btn"><i class="fa fa-search"></i></button>
-                                </div>
-                            </form>
+                    <div class="s-item-title">
+                        <div class="s-component s-text">
+                            <h3 class="s-component-content s-font-heading"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                         </div>
-
-                        <div class="widget recent-causes">
-                            <h3>Recent Projects</h3>
-                            <div>
-                                <h4><a href="#">Blood Donation in virginia</a></h4>
-                                <p class="remaing-date">22 days remaing</p>
-                            </div>
-                            <div>
-                                <h4><a href="#">Boston orphanage opening</a></h4>
-                                <p class="remaing-date">22 days remaing</p>
-                            </div>
-                            <div>
-                                <h4><a href="#">Hair for cancer</a></h4>
-                                <p class="remaing-date">22 days remaing</p>
-                            </div>
-                        </div>
-
-                        <div class="widget recent-events-widget">
-                            <h3>Events nearby</h3>
-                            <div class="event-list">
-                                <div class="event-pic">
-                                    <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/events-nearby/img-2.jpg" alt class="img img-responsive"></a>
-                                </div>
-                                <div class="event-info">
-                                    <h4><a href="#">Towards Humanity</a></h4>
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-calender"></i> 17 March, 2017</a></li>
-                                        <li><a href="#"><i class="fa fa-map-marker"></i> 221B, Baker Street</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                    </div>
+                    <div class="s-component-content s-font-body">
+                        <?php the_content(); ?>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-  <?php get_template_part('templates/layout', 'builder'); ?>
+    </div>
 
 <?php endwhile; ?>

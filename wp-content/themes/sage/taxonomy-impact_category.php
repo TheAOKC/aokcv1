@@ -11,17 +11,12 @@
         <div class="container">
 
             <?php
-
-
-
             $args = array(
                 'post_type' => 'impacts',
                 'posts_per_page' => -1,
                 'post_status' => 'publish',
                 'impact_status'  => 'on-going',
                 'impact_category'  => $term->slug,
-
-
 
             );
             $the_query = new WP_Query( $args );
@@ -48,7 +43,7 @@
                                         </div>
                                     </div>
                                     <div class="s-component-content s-font-body">
-                                        <?php the_content(); ?>
+                                        <?php the_excerpt(); ?>
                                     </div>
                                     <div class="goal-raised">
                                         <div class="progress">

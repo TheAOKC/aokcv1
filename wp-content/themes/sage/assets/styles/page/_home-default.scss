@@ -248,6 +248,7 @@
 			text-align: left;
 			padding-left: 10px;
 			position: relative;
+			max-width: 100%;
 			box-shadow: none;
 			@include transition-time(1.8s);
 	    }
