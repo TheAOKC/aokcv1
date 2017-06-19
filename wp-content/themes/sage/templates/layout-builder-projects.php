@@ -12,7 +12,7 @@
             'post_type' => 'project',
             'posts_per_page' => 4,
             'post_status' => 'publish',
-            'impact_categories'  => 'on-going'
+            'product'  => 'on-going'
 
         );
         $the_query = new WP_Query( $args );
@@ -38,6 +38,9 @@
                                ?>
                            </div>
                            <div class="details">
+
+                               <?php // $donationpercent = round((get_field('project_raised') / get_field('project_goal')) * 100); ?>
+
 
                                <div class="meter-3" data-value="0.65">
                                    <span></span>
@@ -248,7 +251,7 @@
                     'post_type' => 'project',
                     'posts_per_page' => -1,
                     'post_status' => 'publish',
-                    'impact_categories'  => 'on-going'
+                    'product'  => 'on-going'
 
                 );
                 $the_query = new WP_Query( $args );

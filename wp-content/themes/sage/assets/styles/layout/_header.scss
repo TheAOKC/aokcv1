@@ -270,8 +270,8 @@
 		}
 
 		> ul > li > a {
-			font-size: 18px;
-			font-size: calc-rem-value(18);
+			font-size: 16px;
+			font-size: calc-rem-value(16);
 			font-weight: 600;
 			color: #5c686e;
 			padding: 28px 24px;
@@ -1018,7 +1018,12 @@
 
 				a {
 					background-color: #ff2a28;
-					color: #fff;
+					color: #fff!important;
+
+					&:active,
+					&:hover {
+						background-color: #E82723;
+					}
 				}
 			}
 		}

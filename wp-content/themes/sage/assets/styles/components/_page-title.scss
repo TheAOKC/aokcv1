@@ -44,6 +44,23 @@
 			font-size: calc-rem-value(40);
 		}
 	}
+
+
+	&.none {
+		background-image: none;
+		background-color: #2b2b2b;
+		max-height: 103px;
+		box-shadow: #ff2a28 0 -6px 0 inset;
+
+		&:before {
+			display: none;
+		}
+
+		h1 {
+			display: none;
+		}
+	}
+
 }
 
 .page-title-wrapper {

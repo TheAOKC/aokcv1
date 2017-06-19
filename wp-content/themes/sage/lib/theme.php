@@ -160,9 +160,11 @@ add_filter('excerpt_more', 'jordan_new_excerpt_more');
 /**
  * custom Post Type
  */
+
+add_action( 'init', 'custom_post_type', 0 );
 function custom_post_type() {
 
-    // Set UI labels for Team Post Type
+    // PROJECT Post Type
     $labels = array(
         'name'                => _x( 'Project', 'Post Type General Name', 'twentythirteen' ),
         'singular_name'       => _x( 'Project', 'Post Type Singular Name', 'twentythirteen' ),
@@ -180,7 +182,6 @@ function custom_post_type() {
     );
 
     // Set other options for Project Post Type
-
     $args = array(
         'label'               => __( 'project', 'twentythirteen' ),
         'description'         => __( 'Project', 'twentythirteen' ),
@@ -212,7 +213,7 @@ function custom_post_type() {
 
     ////////
 
-    // Set UI labels for Fundraise Post Type
+    // Fundraise Post Type
     $labels = array(
         'name'                => _x( 'Fundraise', 'Post Type General Name', 'twentythirteen' ),
         'singular_name'       => _x( 'Fundraise', 'Post Type Singular Name', 'twentythirteen' ),
@@ -262,7 +263,7 @@ function custom_post_type() {
 
     ////////
 
-    // Set UI labels for Team Post Type
+    // TEAM Post Type
     $labels = array(
         'name'                => _x( 'Team', 'Post Type General Name', 'twentythirteen' ),
         'singular_name'       => _x( 'Team', 'Post Type Singular Name', 'twentythirteen' ),
@@ -282,7 +283,7 @@ function custom_post_type() {
     // Set other options for Team Post Type
 
     $args = array(
-        'label'               => __( 'team_type', 'twentythirteen' ),
+        'label'               => __( 'teams', 'twentythirteen' ),
         'description'         => __( 'Team', 'twentythirteen' ),
         'labels'              => $labels,
         // Features this CPT supports in Post Editor
@@ -308,12 +309,17 @@ function custom_post_type() {
     );
 
     // Registering your Team Post Type
-    register_post_type( 'team_type', $args );
+    register_post_type( 'teams', $args );
 
 
     ////////
+}
 
-    // Set UI labels for Team Post Type
+
+
+//runs on init
+function custom_post_type_function(){
+    // IMPACT Post Type
     $labels = array(
         'name'                => _x( 'Impact', 'Post Type General Name', 'twentythirteen' ),
         'singular_name'       => _x( 'Impact', 'Post Type Singular Name', 'twentythirteen' ),
@@ -337,14 +343,14 @@ function custom_post_type() {
         'description'         => __( 'Impact', 'twentythirteen' ),
         'labels'              => $labels,
         // Features this CPT supports in Post Editor
-        'supports'            => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
+        'supports'            => array( 'title', 'editor', 'thumbnail' ),
         // You can associate this CPT with a taxonomy or custom taxonomy.
-        //'taxonomies'          => array( 'genres' ),
+        'taxonomies' => array('impact_category', 'impact_status'), // this is IMPORTANT
         /* A hierarchical CPT is like Pages and can have
         * Parent and child items. A non-hierarchical CPT
         * is like Posts.
         */
-        'hierarchical'        => false,
+        'hierarchical'        => true,
         'public'              => true,
         'show_ui'             => true,
         'show_in_menu'        => true,
@@ -355,23 +361,82 @@ function custom_post_type() {
         'has_archive'         => true,
         'exclude_from_search' => false,
         'publicly_queryable'  => true,
-        'capability_type'     => 'page',
+        'capability_type'     => 'post',
     );
 
     // Registering your Impact Post Type
     register_post_type( 'impacts', $args );
-
 }
+//runs only when the theme is set up
+function custom_flush_rules(){
+    //defines the post type so the rules can be flushed.
+    custom_post_type();
 
-/* Hook into the 'init' action so that the function
-* Containing our post type registration is not
-* unnecessarily executed.
-*/
+    //and flush the rules.
+    flush_rewrite_rules();
+}
+add_action('after_theme_switch', 'custom_flush_rules');
+add_action( 'init', 'custom_post_type_function' );
 
-add_action( 'init', 'custom_post_type', 0 );
+add_action( 'init', 'create_taxonomies', 0 );
 
 
-function create_project_taxonomies() {
+function create_taxonomies() {
+
+    /// IMPACT CATEGORIES
+    $labels = array(
+        'name'              => _x( 'Categories', 'taxonomy general name' ),
+        'singular_name'     => _x( 'Category', 'taxonomy singular name' ),
+        'search_items'      => __( 'Search Categories' ),
+        'all_items'         => __( 'All Categories' ),
+        'parent_item'       => __( 'Parent Category' ),
+        'parent_item_colon' => __( 'Parent Category:' ),
+        'edit_item'         => __( 'Edit Category' ),
+        'update_item'       => __( 'Update Category' ),
+        'add_new_item'      => __( 'Add New Category' ),
+        'new_item_name'     => __( 'New Category Name' ),
+        'menu_name'         => __( 'Categories' ),
+    );
+
+    $impact_args = array(
+        'hierarchical'      => true, // Set this to 'false' for non-hierarchical taxonomy (like tags)
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+    );
+
+    register_taxonomy( 'impact_category', array( 'impact_category' ), $impact_args );
+
+    /// IMPACT CATEGORIES
+    $labels = array(
+        'name'              => _x( 'Status', 'taxonomy general name' ),
+        'singular_name'     => _x( 'Category', 'taxonomy singular name' ),
+        'search_items'      => __( 'Search Status' ),
+        'all_items'         => __( 'All Status' ),
+        'parent_item'       => __( 'Parent Category' ),
+        'parent_item_colon' => __( 'Parent Category:' ),
+        'edit_item'         => __( 'Edit Category' ),
+        'update_item'       => __( 'Update Category' ),
+        'add_new_item'      => __( 'Add New Category' ),
+        'new_item_name'     => __( 'New Category Name' ),
+        'menu_name'         => __( 'Status' ),
+    );
+
+    $args = array(
+        'hierarchical'      => true, // Set this to 'false' for non-hierarchical taxonomy (like tags)
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+    );
+
+    register_taxonomy( 'impact_status', array( 'impact_status' ), $args );
+
+
+
+    /// PROJECTS CATEGORIES
+
     $labels = array(
         'name'              => _x( 'Categories', 'taxonomy general name' ),
         'singular_name'     => _x( 'Category', 'taxonomy singular name' ),
@@ -392,14 +457,11 @@ function create_project_taxonomies() {
         'show_ui'           => true,
         'show_admin_column' => true,
         'query_var'         => true,
-        'rewrite'           => array( 'slug' => 'categories' ),
     );
 
     register_taxonomy( 'projects', array( 'project' ), $args );
+
 }
-add_action( 'init', 'create_project_taxonomies', 0 );
-
-
 
 
 ///// excerpt

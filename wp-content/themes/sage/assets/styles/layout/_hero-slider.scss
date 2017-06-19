@@ -347,33 +347,9 @@
 
 /*** slider style 3 ***/
 .hero-slider-s3 {
-
-	@include widther(992px) {
-		min-height: 750px;
-	}
-
-	@include widther(1200px) {
-		min-height: 880px;
-	}
-
-	@include media-query(767px) {
-		min-height: 500px;
-	}
+	min-height: 500px;
 
 
-	.slide {
-		@include widther(992px) {
-			min-height: 750px;
-		}
-
-		@include widther(1200px) {
-			min-height: 880px;
-		}
-
-		@include media-query(767px) {
-			min-height: 500px;
-		}
-	}
 
 	.slide .col {
 		top: 55%;

@@ -7,40 +7,39 @@
             </div>
         <?php endif; ?>
 
-        <?php
-        $args = array(
-            'post_type' => 'impacts',
-            'posts_per_page' => 5,
-            'post_status' => 'publish'
 
-        );
-        $the_query = new WP_Query( $args );
+
+        <?php
+        $args = array('type' => 'impacts', 'taxonomy' => 'impact_category');
+
+
+        $categories = get_categories($args);
         ?>
 
-        <?php if ( $the_query->have_posts() ) : ?>
 
 
             <div class="to-change-holder clearfix">
                 <ul>
-                    <?php while ( $the_query->have_posts() ) : $the_query->the_post();?>
+                    <?php foreach($categories as $category) : ?>
 
                         <li>
-                            <a href="<?php the_permalink(); ?>" style="background-image: url('<?php echo the_post_thumbnail_url('full'); ?>');">
+
+
+                            <a href="<?php echo get_term_link($category->term_id); ?>" style="background-image: url(<?php echo z_taxonomy_image_url($category->term_id); ?>)">
                                 <span></span>
                                 <div class="tch-content">
-                                    <h3><?php the_title(); ?></h3>
-                                    <?php the_excerpt(); ?>
+                                    <h3><?php echo $category->name ?></h3>
+                                    <?php echo category_description( $category->term_id ); ?>
                                 </div>
                             </a>
                         </li>
-                    <?php endwhile; ?>
+                    <?php endforeach; ?>
 
 
                     <?php wp_reset_query(); ?>
                 </ul>
             </div>
 
-        <?php endif; ?>
 
     </div>
 
@@ -109,8 +108,7 @@
                     $args = array(
                         'post_type' => 'impacts',
                         'posts_per_page' => -1,
-                        'post_status' => 'publish',
-                        'impact_categories'  => 'past'
+                        'post_status' => 'publish'
 
                     );
                     $the_query = new WP_Query( $args );
